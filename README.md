@@ -19,6 +19,7 @@ The food ordering industry requires fast and reliable systems to manage customer
 - [Data Engineering](#data-engineering)
 - [Model Training](#model-training)
 - [Working Flow](#working-flow)
+- [Installation Guide](#installation-guide)
 - [Conclusion](#conclusion)
 
 ---
@@ -102,6 +103,47 @@ This project utilizes Dialogflow’s NLU for intent and entity recognition, key 
 4. **Response Generation**: The chatbot generates a response to guide the user through the ordering process.
 
 ---
+
+## Installation Guide
+
+### Prerequisites
+Ensure the following are installed on your system:
+1. **Python** (3.7 or above)
+2. **MySQL** (for database setup)
+3. **ngrok** (for converting HTTP to HTTPS)
+4. **Git** (to clone the GitHub repository)
+
+### Step-by-Step Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/shahjhan22/Customer-Support-Bot-For-Hotel.git
+   cd Customer-Support-Bot-For-Hotel
+
+2. **MySQL Database**:
+    The SQL database has already been uploaded to the server. You will need to ensure the following:
+
+     You have access to the MySQL database used in the project.
+     Update the database connection details in the config.py file with your MySQL credentials (host, user, password, 
+     database name).
+
+3. **Set Up Dialogflow**:
+     Log in to the Dialogflow Console.
+     Create a new agent and define intents and entities.
+     Enable Webhook Fulfillment and configure it with the ngrok HTTPS URL.
+
+4. **Start FastAPI Server**:
+   ```bash
+   uvicorn main:app --reload
+
+5. **Use ngrok for HTTPS**:
+   ```bash
+   ngrok http 8000
+
+6. **Run and Test**:
+Test common use cases through Dialogflow's console like adding items, tracking orders, and completing orders.
+
+
 
 ## Conclusion
 
